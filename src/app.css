@@ -116,6 +116,7 @@ main {
 }
 
 .image-viewer-alert {
+    text-align: center;
     width: 100%;
     height: fit-content;
     gap: 12px;
@@ -221,6 +222,7 @@ main {
     opacity: 50%;
     div {
         font-size: 20px;
+        text-align: center;
     }
 }
 
