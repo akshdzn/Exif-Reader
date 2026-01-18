@@ -2,7 +2,7 @@
     import { getAllTags } from "exif-js";
     import ExifReader, { errors } from "exifreader";
 
-    import { UploadSimple, FileImage } from "phosphor-svelte";
+    import { UploadSimple, FileImage, Share, Clipboard } from "phosphor-svelte";
 
     let inputBox;
     let imgInput;
@@ -70,5 +70,16 @@
                 </div>
             {/each}
         {/if}
+    </div>
+
+    <div class="buttons">
+        <button aria-label="export" class="button">
+            <Share size={24}></Share>
+            export
+        </button>
+        <button aria-label="copy" class="button">
+            <Clipboard size={24}></Clipboard>
+            copy
+        </button>
     </div>
 </main>

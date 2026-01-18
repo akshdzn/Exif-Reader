@@ -163,9 +163,38 @@ main {
 
 .list-item-name {
     font-size: 20px;
+    width: 100%;
+    text-align: left;
 }
 
 .list-item-value {
     font-family: "Martian Mono", monospace;
     font-size: 15px;
+    width: 100%;
+    text-align: right;
+}
+
+.buttons {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.button {
+    all: unset;
+    width: fit-content;
+    height: fit-content;
+    gap: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background: var(--bgGradient);
+    border: solid 1px var(--border);
+    box-shadow: var(--shadow);
+    border-radius: 15px;
+    font-size: 20px;
 }
