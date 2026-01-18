@@ -19,6 +19,38 @@
             exifData = tags;
         });
     }
+
+    // text file generation
+    function exportTextFile() {
+        if (exifData) {
+            const blob = new Blob(
+                [JSON.stringify(exifData) + " generated with EXIF-reader : "],
+                {
+                    type: "text/plain",
+                },
+            );
+            const link = document.createElement("a");
+            link.href = URL.createObjectURL(blob);
+            link.download = imgInput[0].name + ".txt";
+
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    }
+
+    // text copy
+    function copyEXIF() {
+        if (exifData) {
+            const textArea = document.createElement("textarea");
+            textArea.value =
+                JSON.stringify(exifData) + " generated with EXIF-reader : ";
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand("copy");
+            document.body.removeChild(textArea);
+        }
+    }
 </script>
 
 <main>
@@ -73,13 +105,23 @@
     </div>
 
     <div class="buttons">
-        <button aria-label="export" class="button">
+        <button aria-label="export" class="button" on:click={exportTextFile()}>
             <Share size={24}></Share>
             export
         </button>
-        <button aria-label="copy" class="button">
+        <button aria-label="copy" class="button" on:click={copyEXIF()}>
             <Clipboard size={24}></Clipboard>
             copy
         </button>
+    </div>
+
+    <div class="footer">
+        <div>Made by <a href="https://github.com/akshdzn">Akshay V V</a></div>
+        <div>|</div>
+        <div>
+            Powered by <a href="https://github.com/mattiasw/ExifReader"
+                >exifreader</a
+            >
+        </div>
     </div>
 </main>
