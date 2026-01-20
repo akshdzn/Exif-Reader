@@ -1,5 +1,4 @@
 <script>
-    import { getAllTags } from "exif-js";
     import ExifReader, { errors } from "exifreader";
 
     import { UploadSimple, FileImage, Share, Clipboard } from "phosphor-svelte";
